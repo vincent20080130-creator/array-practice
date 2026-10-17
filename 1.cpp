@@ -1,4 +1,4 @@
-//日期:2026/10/16
+//日期:2026/10/17
 //學號:1150640
 //姓名:蔡愷昕
 #include <iostream>
@@ -6,32 +6,25 @@
 using namespace std;
 int main()
 {
-	int a[10] = { 10 };
-	int no;
-	cout << "Enter no of elements:";
-	cin >> no;
-	for (int i = 0; i < no; i++) {
-		a[i] = i + 1 + (i + 1) * 10;
-		cout << "a[" << i << "]=" << a[i] << endl;
+	int i = 0;
+	int A[5] = { 5, 6, 8, 84, 19 };
+	int Max = A[0];
+	int Min = A[0];
+	int p1 = 0, p2 = 0;
+	for (i = 0; i <= 4; i++) {
+		if (Max < A[i]) {
+			Max = A[i];
+			p1 = i;
+		}
+		if (Min > A[i]) {
+			Min = A[i];
+			p2 = i;
+		}
 	}
-	int se;
-	cout << "Enter the number to be searched:";
-	cin >> se;
-	cout << "Number " << se << " is found at index:" << (se / 11) - 1 << endl;
-	int dex , va;
-	cout << "Enter the index to insert:";
-	cin >> dex;
-	cout << "Enter the value to insert:";
-	cin >> va;
-	for (int i = no ; i > dex; i--) {
-		a[i] = a[i - 1];
-	}
-	a[dex] = va;
-	no++;
-	cout << "Print all values:";
-	for (int n = 0; n <= 9; n++) {
-		cout << a[n] << " ";
-	}
+	cout << "Max is A[" << p1 << "]=" << Max << endl;
+	cout << "Min is A[" << p2 << "]=" << Min << endl;
+	cout << "sum is " << Max + Min << endl;
+	cout << "gap is " << Max - Min << endl;
 	system("pause");
-	return(0);
+	return 0;
 }
